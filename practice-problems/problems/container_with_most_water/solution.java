@@ -6,7 +6,7 @@ class Solution {
         
         int b, h, currentArea;
         
-        while (start <= end){
+        while (start < end){
             
             b = end - start;
             // determing lowest height w/ ternary operator;     
