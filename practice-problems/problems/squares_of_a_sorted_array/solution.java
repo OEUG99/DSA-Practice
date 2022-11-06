@@ -1,3 +1,7 @@
+/** Squares of a Sorted Array
+*Given an integer array nums sorted in non-decreasing order, 
+*return an array of the squares of each number sorted in non-decreasing order.
+*/
 public class Solution {
     public int[] sortedSquares(int[] nums) {
         int[] temp = new int[nums.length];
@@ -43,7 +47,10 @@ public class Solution {
             } // if element is greater or equal, we ignore it.
             
         }
-                        // now our pivot is almost in the right spot, we just have to iterate i, swap with j then BOOM our pivot is not in a sorted spot
+        /*
+        now our pivot is almost in the right spot, we just have to iterate i, 
+        swap with j then BOOM our pivot is not in a sorted spot
+        */
         i++;
         int tmp_ = array[j];
         array[j] = array[i];
