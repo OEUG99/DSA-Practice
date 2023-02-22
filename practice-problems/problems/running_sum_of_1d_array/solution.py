@@ -1,20 +1,15 @@
-class Solution:
-    def runningSum(self, nums: List[int]) -> List[int]:
+class Solution(object):
+    def runningSum(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
         result = []
-        for y, _ in enumerate(nums):
-            
-            if y >= len(nums):
+        for x, num in enumerate(nums):
+
+            if x+1 > len(nums):
                 break
 
-            result.append(self.sum(y+1, nums))
+            result.append(sum(nums[:x+1]))
 
         return result
-
-    def sum(self, count, nums):
-        sum = 0
-        for x in range(count):
-            sum = sum + nums[x]
-
-        return sum
-        
-    
