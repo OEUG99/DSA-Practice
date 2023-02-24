@@ -4,39 +4,27 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-
         leftSum = 0
         rightSum = sum(nums)
 
-        """
-        rightSum starts as the entire array,
-        leftSum is an empty array.
+        for x in range(len(nums)):
+            
+            rightSum -= nums[x]
 
-        step 1:
-        create a first pivot at itr by removing it from 
-        rightSum
 
-        step 2:
-        Now both arrays don't have that value, so we check if
-        this removed value is the right pivot.
+            if rightSum == leftSum:
+                return x
 
-        step 3:
-        if not right pivot, we add the previous pivot to the left sub array. 
+            leftSum += nums[x]
+        
+        return -1
 
-        step 4:
-        repeat
-        """
 
-        for itr, num in enumerate(nums):
-            rightSum -= num
-
-            if (leftSum == rightSum):
-                return itr
-    
-            leftSum += num
+            
             
 
-        return -1 
+
+
 
 
 
