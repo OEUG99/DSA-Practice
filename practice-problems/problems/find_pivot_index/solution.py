@@ -4,22 +4,21 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        leftSum = 0
-        rightSum = sum(nums)
 
-        for x in range(len(nums)):
-            
-            rightSum -= nums[x]
+        left = 0
+        right = sum(nums)
 
 
-            if rightSum == leftSum:
+        for x, y in enumerate(nums):
+
+            right -= y
+
+            if left == right:
                 return x
-
-            leftSum += nums[x]
+            
+            left += y
         
         return -1
-
-
             
             
 
